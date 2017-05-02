@@ -1,0 +1,8 @@
+/framework
+/runtime
+.DS_Store
+/application/database.php
+/application/config.php
+/logs
+/public/index.php
+/public/uploads
