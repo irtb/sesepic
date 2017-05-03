@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+        <title>upload picture</title>
+
+        <meta name="description" content="upload picture" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
+
+        <!-- text fonts -->
+        <link rel="stylesheet" href="/static/assets/fonts/fonts.googleapis.com.css" />
+
+        <!-- ace styles -->
+        <link rel="stylesheet" href="/static/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    </head>
+
+    <body class="no-skin">
+        <div id="navbar" class="navbar navbar-default">
+            <script type="text/javascript">
+                try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+            </script>
+
+            <div class="navbar-container" id="navbar-container">
+                <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                    <span class="sr-only">Toggle sidebar</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-header pull-left">
+                    <a href="" class="navbar-brand">
+                        <small>
+                            <i class="fa fa-key"></i>
+							upload picture
+                        </small>
+                    </a>
+                </div>
+
+                <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                    <ul class="nav ace-nav">
+                        <li class="light-blue">
+                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                <!-- <img class="nav-user-photo" src="/static/assets/avatars/user.jpg" alt="Jason's Photo" /> -->
+                                <span class="user-info">
+                                    <small> {:session('user_auth.name')} </small>
+                                    {:session('user_auth.phone')}
+                                </span>
+
+                                <i class="ace-icon fa fa-caret-down"></i>
+                            </a>
+
+                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                <li>
+                                    <a href="{:url('/admin/index/logout')}">
+                                        <i class="ace-icon fa fa-power-off"></i>退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.navbar-container -->
+        </div>
+
+        <div class="main-container" id="main-container">
+            <div class="main-content">
+                <div class="main-content-inner">
+					<!-- 内容 -->
+					<div class="page-content">
+					    <div class="row">
+					        <div class="col-xs-12">
+					            <!-- PAGE CONTENT BEGINS -->
+					            <form class="form-horizontal" role="form" method="post" action="{:url('/admin/pic/index')}">
+					                <div class="form-group">
+					                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 分组名称 </label>
+
+					                    <div class="col-sm-15">
+					                        <input type="text" name="group_name" id="form-field-1" placeholder="分组名称" class="col-xs-100 col-sm-5" />
+					                    </div>
+					                </div>
+
+					                
+					                <div class="clearfix form-actions">
+					                    <div class="col-md-offset-3 col-md-9">
+					                        <button class="btn btn-info" type="submit">
+					                            <i class="ace-icon fa fa-check bigger-110"></i>
+					                            上传照片
+					                        </button>
+					                    </div>
+					                </div>
+					            </form>
+					        </div>
+					    </div>
+					</div><!-- /.page-content -->
+                </div>
+            </div><!-- /.main-content -->
+        </div><!-- /.main-container -->
+    </body>
+</html>
